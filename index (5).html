@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sabrina Veras Advocacia | Atendimento Jurídico Personalizado</title>
+  <meta name="description" content="Sabrina Veras Advocacia oferece atendimento jurídico personalizado, com orientação estratégica, responsabilidade e atenção às necessidades de cada cliente.">
+  <meta name="theme-color" content="#5B0F16">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Sabrina Veras Advocacia | Atendimento Jurídico Personalizado">
+  <meta property="og:description" content="Advocacia estratégica, atendimento próximo e soluções jurídicas personalizadas.">
+  <meta property="og:site_name" content="Sabrina Veras Advocacia">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================
+   Sabrina Veras Advocacia — style.css
+   ========================================================== */
+
+:root {
+  --wine-deep: #5B0F16;
+  --wine: #760F18;
+  --gold-dark: #A98232;
+  --gold: #C6A75E;
+  --cream: #F7F4EF;
+  --cream-2: #EFE9DE;
+  --ink: #171313;
+  --ink-soft: #4a4343;
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --header-h: 84px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+body.no-scroll { overflow: hidden; }
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, p { margin: 0; }
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: .005em;
+}
+
+.container { width: min(1180px, 100% - 48px); margin-inline: auto; }
+.narrow { width: min(820px, 100% - 48px); margin-inline: auto; }
+
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease, transform .35s ease, box-shadow .35s ease;
+}
+.btn-gold { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.btn-gold:hover { background: #d4b872; border-color: #d4b872; transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.22); }
+.btn-outline-light { color: var(--cream); border-color: rgba(198,167,94,.7); }
+.btn-outline-light:hover { background: rgba(198,167,94,.14); border-color: var(--gold); transform: translateY(-2px); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 40px; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  z-index: 100;
+  background: rgba(23,19,19,.55);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(198,167,94,.18);
+  transition: background-color .4s ease, height .4s ease, box-shadow .4s ease;
+}
+.site-header.scrolled { background: rgba(91,15,22,.97); box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+.logo { display: inline-flex; flex-direction: column; line-height: 1; color: var(--cream); }
+.logo-name { font-family: var(--serif); font-size: 1.55rem; font-weight: 700; letter-spacing: .16em; }
+.logo-sub { font-family: var(--sans); font-size: .62rem; font-weight: 500; letter-spacing: .6em; color: var(--gold); margin-top: 7px; padding-left: 2px; }
+
+.main-nav { display: flex; align-items: center; gap: 36px; }
+.main-nav ul { display: flex; gap: 30px; }
+.main-nav ul a {
+  position: relative;
+  font-size: .78rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--cream); padding: 6px 0;
+}
+.main-nav ul a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px;
+  background: var(--gold); transition: width .35s ease;
+}
+.main-nav ul a:hover::after { width: 100%; }
+.btn-nav { padding: 12px 22px; font-size: .72rem; }
+
+.menu-toggle {
+  display: none; width: 46px; height: 46px; padding: 0; background: transparent;
+  border: 1px solid rgba(198,167,94,.5); border-radius: 2px; cursor: pointer;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.menu-toggle span { display: block; width: 22px; height: 1.5px; background: var(--cream); transition: transform .3s ease, opacity .3s ease; }
+.menu-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: calc(var(--header-h) + 72px) 0 96px;
+  display: flex; align-items: center;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at 78% 40%, rgba(118,15,24,.55), transparent 60%),
+    linear-gradient(180deg, #2a070b 0%, var(--wine-deep) 100%);
+  overflow: hidden;
+}
+.hero::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: .6;
+}
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 72px; align-items: center; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: .75rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 26px;
+}
+.eyebrow::before { content: ""; width: 38px; height: 1px; background: var(--gold); }
+.eyebrow-dark { color: var(--gold-dark); }
+.eyebrow-dark::before { background: var(--gold-dark); }
+
+.hero h1 { font-size: clamp(2.5rem, 4.6vw, 4.2rem); font-weight: 600; color: #fff; }
+.lead { font-size: 1.12rem; line-height: 1.8; color: rgba(247,244,239,.82); margin-top: 28px; max-width: 580px; }
+
+.hero-visual { position: relative; max-width: 420px; justify-self: end; width: 100%; }
+.frame { position: relative; border: 1px solid var(--gold); padding: 10px; background: rgba(0,0,0,.2); box-shadow: 0 30px 60px rgba(0,0,0,.4); }
+.frame svg { width: 100%; height: auto; }
+.corner { position: absolute; width: 56px; height: 56px; border: 1px solid var(--gold-dark); pointer-events: none; }
+.corner-tl { top: -16px; left: -16px; border-right: 0; border-bottom: 0; }
+.corner-br { bottom: -16px; right: -16px; border-left: 0; border-top: 0; }
+
+/* ---------- Seções ---------- */
+.section { padding: 128px 0; }
+.section-light { background: var(--cream); }
+.section-cream { background: var(--cream-2); }
+.section-dark { background: var(--ink); color: var(--cream); }
+.section-wine { background: var(--wine-deep); color: var(--cream); }
+
+.section-head { max-width: 720px; margin-bottom: 72px; }
+.section-head h2 { font-size: clamp(2.1rem, 3.6vw, 3.1rem); color: var(--wine-deep); }
+.section-head p { margin-top: 20px; color: var(--ink-soft); font-size: 1.08rem; }
+
+/* O Escritório */
+.split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 88px; align-items: center; }
+.split-visual { max-width: 460px; width: 100%; }
+.frame-light { padding: 0; border: 0; background: none; box-shadow: 0 24px 50px rgba(23,19,19,.18); }
+.split-text h2 { font-size: clamp(2.1rem, 3.6vw, 3.1rem); color: var(--wine-deep); margin-bottom: 28px; }
+.split-text > p { color: var(--ink-soft); margin-bottom: 18px; font-size: 1.06rem; }
+
+.highlights { margin-top: 44px; border-top: 1px solid rgba(169,130,50,.5); }
+.highlights li { padding: 22px 0 22px 26px; border-bottom: 1px solid rgba(169,130,50,.28); position: relative; }
+.highlights li::before { content: ""; position: absolute; left: 0; top: 34px; width: 10px; height: 1px; background: var(--gold-dark); }
+.highlights h3 { font-size: 1.5rem; color: var(--wine); margin-bottom: 4px; }
+.highlights p { color: var(--ink-soft); font-size: .98rem; }
+
+/* Áreas */
+.areas-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+.area {
+  grid-column: span 2;
+  background: var(--cream);
+  padding: 40px 34px 44px;
+  border: 1px solid rgba(169,130,50,.35);
+  border-top: 2px solid var(--gold-dark);
+  transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+.area:nth-child(4) { grid-column: 2 / span 2; }
+.area:nth-child(5) { grid-column: 4 / span 2; }
+.area:hover { transform: translateY(-5px); box-shadow: 0 18px 36px rgba(91,15,22,.12); border-color: var(--gold-dark); }
+.area-num { display: block; font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--gold-dark); letter-spacing: .2em; margin-bottom: 20px; }
+.area h3 { font-size: 1.75rem; color: var(--wine-deep); margin-bottom: 14px; }
+.area p { font-size: .98rem; color: var(--ink-soft); }
+
+/* Timeline */
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; position: relative; padding-top: 18px; }
+.timeline::before { content: ""; position: absolute; top: 31px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--gold-dark), rgba(169,130,50,.25)); }
+.step { position: relative; padding-top: 44px; }
+.step::before {
+  content: ""; position: absolute; top: 24px; left: 0; width: 13px; height: 13px;
+  background: var(--cream); border: 1px solid var(--gold-dark); transform: rotate(45deg);
+}
+.step-num { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; color: var(--wine); line-height: 1; display: block; margin-bottom: 14px; }
+.step h3 { font-size: 1.55rem; color: var(--wine-deep); margin-bottom: 8px; }
+.step p { font-size: .98rem; color: var(--ink-soft); max-width: 250px; }
+
+/* Faixa */
+.band { background: var(--wine); border-top: 1px solid var(--gold-dark); border-bottom: 1px solid var(--gold-dark); padding: 72px 0; position: relative; }
+.band::before, .band::after { content: ""; position: absolute; left: 0; right: 0; height: 1px; background: rgba(198,167,94,.35); }
+.band::before { top: 6px; } .band::after { bottom: 6px; }
+.band-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; color: var(--cream); }
+.band h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); color: #fff; }
+.band p { margin-top: 10px; color: rgba(247,244,239,.82); font-size: 1.08rem; }
+
+/* Por que escolher */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(169,130,50,.5); }
+.why { padding: 36px 30px 12px 0; margin-right: 30px; border-right: 1px solid rgba(169,130,50,.25); }
+.why:last-child { border-right: 0; margin-right: 0; }
+.why h3 { font-size: 1.6rem; color: var(--wine-deep); margin-bottom: 12px; }
+.why p { font-size: .98rem; color: var(--ink-soft); }
+
+/* Atendimento pensado */
+.quote-section { text-align: center; padding: 120px 0; background: linear-gradient(180deg, #1c1515, var(--ink)); }
+.quote-section h2 { font-size: clamp(2rem, 3.6vw, 3rem); color: #fff; margin: 28px 0 24px; }
+.quote-section p { color: rgba(247,244,239,.78); font-size: 1.14rem; max-width: 680px; margin-inline: auto; }
+.ornament { display: block; width: 72px; height: 1px; background: var(--gold); margin-inline: auto; position: relative; }
+.ornament::after { content: ""; position: absolute; left: 50%; top: -4px; width: 8px; height: 8px; background: var(--ink); border: 1px solid var(--gold); transform: translateX(-50%) rotate(45deg); }
+.quote-section .ornament:last-child { margin-top: 36px; }
+
+/* FAQ */
+.faq { border-top: 1px solid rgba(169,130,50,.5); }
+.faq details { border-bottom: 1px solid rgba(169,130,50,.35); }
+.faq summary {
+  list-style: none; cursor: pointer; position: relative;
+  padding: 26px 56px 26px 0;
+  font-family: var(--serif); font-size: 1.45rem; font-weight: 600; color: var(--wine-deep);
+  transition: color .3s ease;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { color: var(--wine); }
+.faq summary::before, .faq summary::after {
+  content: ""; position: absolute; right: 8px; top: 50%; width: 16px; height: 1.5px; background: var(--gold-dark);
+  transition: transform .35s ease;
+}
+.faq summary::after { transform: rotate(90deg); }
+.faq details[open] summary::after { transform: rotate(0deg); }
+.faq details p { padding: 0 56px 28px 0; color: var(--ink-soft); animation: faqIn .45s ease; }
+@keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* Contato */
+.contact { background: linear-gradient(180deg, var(--wine-deep), #3d0a10); }
+.contact-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 80px; align-items: center; }
+.contact h2 { font-size: clamp(2.2rem, 4vw, 3.4rem); color: #fff; }
+.contact .btn { margin-top: 40px; }
+.contact-card { font-style: normal; border: 1px solid var(--gold-dark); padding: 44px 36px; background: rgba(0,0,0,.18); position: relative; }
+.contact-card::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(198,167,94,.25); pointer-events: none; }
+.contact-name { font-family: var(--serif); font-size: 1.8rem; font-weight: 600; color: #fff; line-height: 1.2; }
+.contact-sub { color: rgba(247,244,239,.75); margin-top: 6px; font-size: .98rem; }
+.rule { display: block; width: 44px; height: 1px; background: var(--gold); margin: 26px 0; }
+.contact-label { font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.contact-phone { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: #fff; transition: color .3s ease; }
+.contact-phone:hover { color: var(--gold); }
+
+/* ---------- Footer ---------- */
+.site-footer { background: #1b0709; color: var(--cream); padding: 80px 0 36px; border-top: 1px solid var(--gold-dark); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 56px; padding-bottom: 56px; }
+.footer-brand p { margin-top: 24px; max-width: 340px; color: rgba(247,244,239,.7); font-size: .98rem; }
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(247,244,239,.8); transition: color .3s ease; width: fit-content; }
+.footer-links a:hover { color: var(--gold); }
+.footer-contact a { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; transition: color .3s ease; }
+.footer-contact a:hover { color: var(--gold); }
+.footer-note { border-top: 1px solid rgba(198,167,94,.25); padding-top: 28px; }
+.footer-note p { font-size: .85rem; color: rgba(247,244,239,.55); max-width: 760px; line-height: 1.6; }
+
+/* WhatsApp flutuante (somente celular) */
+.whatsapp-float { display: none; }
+
+/* ---------- Animações ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s ease, transform .9s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.areas-grid .reveal:nth-child(2), .timeline .reveal:nth-child(2), .why-grid .reveal:nth-child(2) { transition-delay: .08s; }
+.areas-grid .reveal:nth-child(3), .timeline .reveal:nth-child(3), .why-grid .reveal:nth-child(3) { transition-delay: .16s; }
+.areas-grid .reveal:nth-child(4), .timeline .reveal:nth-child(4), .why-grid .reveal:nth-child(4) { transition-delay: .24s; }
+.areas-grid .reveal:nth-child(5) { transition-delay: .32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation: none !important; }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1100px) {
+  .main-nav { gap: 24px; }
+  .main-nav ul { gap: 20px; }
+  .hero-grid { gap: 48px; }
+  .split { gap: 56px; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .why { border-right: 0; margin-right: 0; padding-bottom: 28px; }
+}
+
+@media (max-width: 960px) {
+  :root { --header-h: 74px; }
+  .menu-toggle { display: flex; }
+  .main-nav {
+    position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0;
+    flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 28px;
+    padding: 36px 24px; background: var(--wine-deep);
+    transform: translateX(100%); visibility: hidden;
+    transition: transform .4s ease, visibility .4s;
+    overflow-y: auto;
+  }
+  .main-nav.open { transform: none; visibility: visible; }
+  .main-nav ul { flex-direction: column; gap: 0; }
+  .main-nav ul li { border-bottom: 1px solid rgba(198,167,94,.25); }
+  .main-nav ul a { display: block; padding: 20px 0; font-size: 1rem; }
+  .main-nav ul a::after { display: none; }
+  .btn-nav { padding: 18px 24px; font-size: .85rem; }
+
+  .hero { min-height: auto; padding: calc(var(--header-h) + 56px) 0 88px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 64px; }
+  .hero-visual { justify-self: center; max-width: 360px; }
+
+  .section { padding: 92px 0; }
+  .split { grid-template-columns: 1fr; }
+  .split-visual { max-width: 400px; margin-inline: auto; order: 2; }
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
+  .area, .area:nth-child(4), .area:nth-child(5) { grid-column: auto; }
+  .area:nth-child(5) { grid-column: 1 / -1; }
+  .timeline { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
+  .band-inner { flex-direction: column; align-items: flex-start; }
+  .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  .container, .narrow { width: calc(100% - 40px); }
+  .logo-name { font-size: 1.3rem; }
+  .logo-sub { font-size: .56rem; }
+
+  .btn { width: 100%; padding: 18px 24px; }
+  .btn-row { flex-direction: column; gap: 14px; }
+
+  .hero h1 { font-size: 2.2rem; }
+  .lead { font-size: 1.06rem; }
+  .hero-visual { max-width: 300px; }
+  .corner { width: 40px; height: 40px; }
+
+  .section { padding: 76px 0; }
+  .section-head { margin-bottom: 48px; }
+
+  .areas-grid, .timeline, .why-grid { grid-template-columns: 1fr; }
+  .area:nth-child(5) { grid-column: auto; }
+  .area { padding: 32px 26px 36px; }
+
+  .timeline { padding-top: 0; padding-left: 28px; row-gap: 40px; }
+  .timeline::before { top: 0; bottom: 0; left: 6px; right: auto; width: 1px; height: auto; background: linear-gradient(180deg, var(--gold-dark), rgba(169,130,50,.25)); }
+  .step { padding-top: 0; }
+  .step::before { top: 10px; left: -28px; }
+  .step p { max-width: none; }
+
+  .why { padding: 28px 0 8px; border-bottom: 1px solid rgba(169,130,50,.25); }
+  .why:last-child { border-bottom: 0; }
+
+  .band { padding: 60px 0; }
+  .quote-section { padding: 84px 0; }
+  .faq summary { font-size: 1.25rem; padding: 22px 44px 22px 0; }
+  .faq details p { padding-right: 0; }
+
+  .contact-card { padding: 36px 26px; }
+  .contact-phone { font-size: 1.75rem; }
+
+  .site-footer { padding-bottom: 104px; }
+
+  .whatsapp-float {
+    display: flex; align-items: center; justify-content: center;
+    position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 90;
+    padding: 17px 20px; background: var(--gold); color: var(--ink);
+    font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    border-radius: 2px; box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  }
+}
+
+  /* ==========================================================
+     IMAGENS DE FUNDO
+     Para trocar uma foto, altere apenas a URL na variável abaixo.
+     Use imagens largas (mín. 2000px) e escuras/quentes.
+     ========================================================== */
+  :root {
+    --img-hero: url("https://images.unsplash.com/photo-1505664063603-28e48ca204eb?auto=format&fit=crop&w=2400&q=80");
+    --img-escritorio: url("https://images.unsplash.com/photo-1603058817990-2b9a9abbce86?auto=format&fit=crop&w=1400&q=80");
+    --img-destaque: url("https://images.unsplash.com/photo-1770131748972-b1a08d57efbc?auto=format&fit=crop&w=2400&q=80");
+    --img-atendimento: url("https://images.unsplash.com/photo-1758380743428-ac0b72817e94?auto=format&fit=crop&w=2400&q=80");
+  }
+
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(95deg, rgba(23,19,19,.92) 0%, rgba(42,7,11,.80) 48%, rgba(23,19,19,.50) 100%),
+      var(--img-hero) center center / cover no-repeat,
+      #2a070b;
+  }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-text { max-width: 760px; }
+
+  .split-visual { position: relative; max-width: 480px; }
+  .split-visual .photo {
+    position: relative; z-index: 1;
+    width: 100%; aspect-ratio: 4 / 5;
+    background:
+      linear-gradient(180deg, rgba(91,15,22,.18), rgba(23,19,19,.35)),
+      var(--img-escritorio) center center / cover no-repeat,
+      #2a070b;
+    box-shadow: 0 24px 50px rgba(23,19,19,.22);
+  }
+  .split-visual::before {
+    content: ""; position: absolute; z-index: 0; top: 18px; left: -18px; right: 18px; bottom: -18px;
+    border: 1px solid var(--gold-dark);
+  }
+
+  .band {
+    min-height: 480px; display: flex; align-items: center; padding: 110px 0;
+    background:
+      linear-gradient(180deg, rgba(23,19,19,.78), rgba(91,15,22,.82)),
+      var(--img-destaque) center center / cover no-repeat,
+      var(--wine-deep);
+  }
+  .band-inner { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0; }
+  .band .eyebrow { margin-bottom: 22px; }
+  .band h2 { font-size: clamp(2.4rem, 5vw, 4.2rem); color: #fff; }
+  .band-text { margin: 20px 0 40px; max-width: 560px; }
+
+  .quote-section {
+    background:
+      linear-gradient(180deg, rgba(23,19,19,.90), rgba(23,19,19,.86)),
+      var(--img-atendimento) center center / cover no-repeat,
+      var(--ink);
+  }
+
+  .contact {
+    background:
+      linear-gradient(180deg, rgba(91,15,22,.93), rgba(42,7,11,.95)),
+      var(--img-hero) center center / cover no-repeat,
+      var(--wine-deep);
+  }
+
+  @media (max-width: 960px) {
+    .split-visual { max-width: 420px; }
+    .split-visual::before { left: -12px; right: 12px; top: 12px; bottom: -12px; }
+  }
+  @media (max-width: 640px) {
+    .hero {
+      background:
+        linear-gradient(180deg, rgba(23,19,19,.86) 0%, rgba(42,7,11,.82) 60%, rgba(23,19,19,.9) 100%),
+        var(--img-hero) 62% center / cover no-repeat,
+        #2a070b;
+    }
+    .split-visual::before { display: none; }
+    .band { min-height: 420px; padding: 84px 0; }
+    .band .eyebrow { letter-spacing: .2em; }
+  }
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="logo" href="#inicio" aria-label="Sabrina Veras Advocacia - início">
+        <span class="logo-name">SABRINA VERAS</span>
+        <span class="logo-sub">ADVOCACIA</span>
+      </a>
+
+      <nav class="main-nav" id="menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#escritorio">O Escritório</a></li>
+          <li><a href="#areas">Áreas de Atuação</a></li>
+          <li><a href="#atendimento">Atendimento</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="btn btn-gold btn-nav" href="https://wa.me/5581985111950" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Sabrina Veras Advocacia</p>
+          <h1>Advocacia estratégica, atendimento próximo e soluções jurídicas personalizadas.</h1>
+          <p class="lead">Sabrina Veras Advocacia oferece atendimento jurídico personalizado, buscando compreender cada situação com atenção, responsabilidade e estratégia para oferecer orientação segura em cada etapa.</p>
+          <div class="btn-row">
+            <a class="btn btn-gold" href="https://wa.me/5581985111950" target="_blank" rel="noopener">Falar com a Advocacia</a>
+            <a class="btn btn-outline-light" href="#escritorio">Conhecer o Escritório</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- O ESCRITÓRIO -->
+    <section class="section section-light" id="escritorio">
+      <div class="container split">
+        <div class="split-visual reveal">
+          <div class="photo" role="img" aria-label="Estantes de madeira com livros em ambiente de escritório"></div>
+        </div>
+
+        <div class="split-text reveal">
+          <p class="eyebrow eyebrow-dark">O Escritório</p>
+          <h2>Atendimento jurídico com seriedade e proximidade</h2>
+          <p>No Sabrina Veras Advocacia, cada caso é analisado de forma individual, considerando as particularidades, necessidades e objetivos de cada cliente.</p>
+          <p>Nosso trabalho une conhecimento jurídico, estratégia e atendimento próximo para proporcionar maior clareza e segurança na tomada de decisões.</p>
+
+          <ul class="highlights">
+            <li>
+              <h3>Atendimento Personalizado</h3>
+              <p>Cada cliente recebe atenção individualizada.</p>
+            </li>
+            <li>
+              <h3>Estratégia Jurídica</h3>
+              <p>Análise cuidadosa para definir os melhores caminhos.</p>
+            </li>
+            <li>
+              <h3>Compromisso</h3>
+              <p>Atuação pautada em responsabilidade, ética e transparência.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section class="section section-cream" id="areas">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow-dark">Atuação</p>
+          <h2>Áreas de Atuação</h2>
+          <p>Atuação jurídica direcionada às necessidades de cada cliente, com análise individualizada e acompanhamento responsável.</p>
+        </header>
+
+        <div class="areas-grid">
+          <article class="area reveal">
+            <span class="area-num">I</span>
+            <h3>Direito de Família</h3>
+            <p>Orientação e atuação em questões relacionadas às relações familiares, buscando soluções jurídicas adequadas para cada situação.</p>
+          </article>
+          <article class="area reveal">
+            <span class="area-num">II</span>
+            <h3>Direito Civil</h3>
+            <p>Atuação em demandas e relações jurídicas de natureza civil, com análise estratégica de cada caso.</p>
+          </article>
+          <article class="area reveal">
+            <span class="area-num">III</span>
+            <h3>Direito do Consumidor</h3>
+            <p>Orientação e defesa dos direitos do consumidor diante de situações de conflito ou irregularidades nas relações de consumo.</p>
+          </article>
+          <article class="area reveal">
+            <span class="area-num">IV</span>
+            <h3>Contratos</h3>
+            <p>Análise, elaboração e revisão de contratos, buscando maior segurança jurídica nas relações estabelecidas.</p>
+          </article>
+          <article class="area reveal">
+            <span class="area-num">V</span>
+            <h3>Consultoria Jurídica</h3>
+            <p>Orientação preventiva para auxiliar pessoas e empresas na tomada de decisões com maior segurança jurídica.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO PODEMOS AJUDAR -->
+    <section class="section section-light" id="atendimento">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow-dark">Atendimento</p>
+          <h2>Como podemos ajudar</h2>
+          <p>Um caminho claro, do primeiro contato ao acompanhamento da sua demanda.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Primeiro contato</h3>
+            <p>O cliente entra em contato para apresentar sua necessidade.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Análise</h3>
+            <p>A situação é compreendida e analisada de forma individual.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Orientação</h3>
+            <p>São apresentados os caminhos jurídicos possíveis para o caso.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">04</span>
+            <h3>Acompanhamento</h3>
+            <p>O cliente recebe acompanhamento profissional durante o desenvolvimento da demanda.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAIXA DE DESTAQUE -->
+    <section class="band">
+      <div class="container band-inner reveal">
+        <p class="eyebrow">Precisa de orientação jurídica?</p>
+        <h2>Cada caso merece atenção.</h2>
+        <p class="band-text">Converse com nossa equipe e explique brevemente sua situação.</p>
+        <a class="btn btn-gold" href="https://wa.me/5581985111950" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- POR QUE ESCOLHER -->
+    <section class="section section-cream" id="diferenciais">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow-dark">Diferenciais</p>
+          <h2>Por que escolher a Sabrina Veras Advocacia</h2>
+        </header>
+
+        <div class="why-grid">
+          <div class="why reveal">
+            <h3>Atendimento humanizado</h3>
+            <p>Comunicação clara e atenção às necessidades de cada cliente.</p>
+          </div>
+          <div class="why reveal">
+            <h3>Análise individualizada</h3>
+            <p>Cada situação possui suas particularidades e deve ser analisada de forma própria.</p>
+          </div>
+          <div class="why reveal">
+            <h3>Transparência</h3>
+            <p>Informações claras durante o atendimento e acompanhamento do caso.</p>
+          </div>
+          <div class="why reveal">
+            <h3>Profissionalismo</h3>
+            <p>Compromisso com uma atuação responsável e ética.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATENDIMENTO PENSADO PARA VOCÊ -->
+    <section class="section section-dark quote-section">
+      <div class="container narrow reveal">
+        <span class="ornament" aria-hidden="true"></span>
+        <h2>Um atendimento pensado para você</h2>
+        <p>Cada atendimento começa pela escuta. Entender a situação, esclarecer dúvidas e apresentar possibilidades faz parte de uma atuação jurídica próxima e responsável.</p>
+        <span class="ornament" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-light" id="faq">
+      <div class="container narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow-dark">Dúvidas</p>
+          <h2>Perguntas frequentes</h2>
+        </header>
+
+        <div class="faq reveal">
+          <details>
+            <summary>Como funciona o primeiro atendimento?</summary>
+            <p>O primeiro atendimento começa com o contato pelo WhatsApp, no qual você apresenta brevemente sua necessidade. A partir disso, a situação é analisada e são verificadas as possibilidades de atendimento e os próximos passos.</p>
+          </details>
+          <details>
+            <summary>O atendimento pode ser realizado online?</summary>
+            <p>As formas de atendimento disponíveis podem ser verificadas diretamente pelo WhatsApp, no momento do primeiro contato com o escritório.</p>
+          </details>
+          <details>
+            <summary>Como posso explicar minha situação antes da consulta?</summary>
+            <p>Pelo WhatsApp, você pode descrever sua situação de forma breve e objetiva. Isso ajuda a compreender sua necessidade e a orientar o melhor encaminhamento. Evite enviar informações sensíveis além do necessário nesse primeiro momento.</p>
+          </details>
+          <details>
+            <summary>O escritório atende casos de outras cidades?</summary>
+            <p>Entre em contato pelo WhatsApp informando sua localidade e a natureza da sua necessidade, para que seja verificada a possibilidade de atendimento.</p>
+          </details>
+          <details>
+            <summary>Como entro em contato pelo WhatsApp?</summary>
+            <p>Basta clicar em qualquer botão de WhatsApp deste site, que abrirá uma conversa direta com o escritório, ou chamar pelo número (81) 98511-1950.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section section-wine contact" id="contato">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Contato</p>
+          <h2>Vamos conversar sobre sua situação?</h2>
+          <p class="lead">Entre em contato pelo WhatsApp para apresentar sua necessidade e verificar as possibilidades de atendimento.</p>
+          <a class="btn btn-gold" href="https://wa.me/5581985111950" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+        <address class="contact-card reveal">
+          <p class="contact-name">Sabrina Veras Advocacia</p>
+          <p class="contact-sub">Atendimento jurídico personalizado</p>
+          <span class="rule" aria-hidden="true"></span>
+          <p class="contact-label">WhatsApp</p>
+          <a class="contact-phone" href="https://wa.me/5581985111950" target="_blank" rel="noopener">(81) 98511-1950</a>
+        </address>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#inicio" aria-label="Voltar ao início">
+          <span class="logo-name">SABRINA VERAS</span>
+          <span class="logo-sub">ADVOCACIA</span>
+        </a>
+        <p>Advocacia estratégica, atendimento próximo e compromisso com cada cliente.</p>
+      </div>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="#inicio">Início</a>
+        <a href="#escritorio">O Escritório</a>
+        <a href="#areas">Áreas de Atuação</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="footer-contact">
+        <p class="contact-label">WhatsApp</p>
+        <a href="https://wa.me/5581985111950" target="_blank" rel="noopener">(81) 98511-1950</a>
+      </div>
+    </div>
+    <div class="container footer-note">
+      <p>As informações apresentadas neste site possuem caráter informativo e não substituem uma análise jurídica individualizada.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5581985111950" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">Falar pelo WhatsApp</a>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('menuToggle');
+      var menu = document.getElementById('menu');
+      var header = document.querySelector('.site-header');
+
+      toggle.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        toggle.classList.toggle('active', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('no-scroll', open);
+      });
+
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          menu.classList.remove('open');
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('no-scroll');
+        });
+      });
+
+      function onScroll() {
+        header.classList.toggle('scrolled', window.scrollY > 30);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var items = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        items.forEach(function (el) { io.observe(el); });
+      } else {
+        items.forEach(function (el) { el.classList.add('visible'); });
+      }
+    })();
+  </script>
+</body>
+</html>
